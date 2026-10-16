@@ -1,0 +1,38 @@
+{
+  "name": "chappie-scroll",
+  "version": "1.0.0",
+  "description": "Semantic declarations for GSAP animations, timelines and scroll-driven motion.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./presets": {
+      "types": "./dist/presets.d.ts",
+      "import": "./dist/presets.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "demo": "vite --host 0.0.0.0"
+  },
+  "peerDependencies": {
+    "gsap": "^3.12.0"
+  },
+  "devDependencies": {
+    "gsap": "^3.15.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.0.0"
+  },
+  "license": "MIT"
+}
