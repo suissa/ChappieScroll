@@ -25,7 +25,10 @@ function render(filter = "all") {
   grid.innerHTML = "";
   motionPresetNames.filter((name) => filter === "all" || category(name) === filter).forEach((name, index) => {
     const card = document.createElement("article");
-    card.className = "preset";\n    card.dataset.chappieScroll = "";\n    card.dataset.motion = "fadeUp";\n    card.dataset.delay = String((index % 4) * 0.04);
+    card.className = "preset";
+    card.dataset.chappieScroll = "";
+    card.dataset.motion = "fadeUp";
+    card.dataset.delay = String((index % 4) * 0.04);
     card.innerHTML = '<button class="preview" aria-label="Replay ' + name + '"><span class="shape shape-' + (index % 6) + '"></span><span class="arrow">↗</span></button><div class="preset-label"><small>' + String(index + 1).padStart(2, "0") + '</small><strong>' + name + '</strong><button class="replay" aria-label="Replay animation">↻</button></div><div class="tag">' + category(name) + ' / gsap</div>';
     const replay = () => {
       const shape = card.querySelector<HTMLElement>(".shape")!;
@@ -42,6 +45,11 @@ function render(filter = "all") {
   scrollEngine = initChappieScroll({ once: true });
 }
 let scrollEngine: ReturnType<typeof initChappieScroll> | undefined;
+document.querySelectorAll<HTMLElement>(".hero .eyebrow, .hero h1, .hero p, .hero .cta, .stats, .section-head").forEach((element, index) => {
+  element.dataset.chappieScroll = "";
+  element.dataset.motion = index % 2 ? "fadeUp" : "blurUp";
+  element.dataset.delay = String((index % 3) * 0.08);
+});
 render();
 document.querySelectorAll<HTMLButtonElement>("[data-filter]").forEach((button) => button.addEventListener("click", () => {
   document.querySelector(".filters .active")?.classList.remove("active");
