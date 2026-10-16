@@ -55,8 +55,8 @@ export const motionPresets = {
   exitRight: preset({ x: 0, autoAlpha: 1 }, { xPercent: 110, autoAlpha: 0 }, 0.65, "power3.in"),
   exitUp: preset({ y: 0, autoAlpha: 1 }, { yPercent: -110, autoAlpha: 0 }, 0.65, "power3.in"),
   exitDown: preset({ y: 0, autoAlpha: 1 }, { yPercent: 110, autoAlpha: 0 }, 0.65, "power3.in"),
-  pulse: preset({ scale: 1 }, { scale: 1.06 }, 0.35, "sine.inOut"),
-  shake: preset({ x: 0 }, { x: 0 }, 0.45, "sine.inOut"),
+  pulse: preset({ scale: 1 }, { scale: 1.06, repeat: 1, yoyo: true }, 0.35, "sine.inOut"),
+  shake: preset({ x: 0 }, { keyframes: [{ x: -8 }, { x: 8 }, { x: -6 }, { x: 4 }, { x: 0 }] }, 0.45, "sine.inOut"),
   shimmer: preset({ backgroundPosition: "200% 0" }, { backgroundPosition: "-200% 0" }, 1.5, "none"),
 } satisfies Record<string, MotionPreset>;
 
