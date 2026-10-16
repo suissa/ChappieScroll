@@ -165,6 +165,6 @@ export function initChappieScroll(options: ChappieScrollOptions = {}): { refresh
   };
 }
 
-export { gsap, ScrollTrigger, motionPresets };
+export { gsap, ScrollTrigger, motionPresets, motionPresetNames };
 export type { ChappieScrollOptions, MotionController, MotionDeclaration, TimelineDeclaration, TimelineStep, MotionPreset } from "./types";
 export type { MotionPresetName } from "./presets";
