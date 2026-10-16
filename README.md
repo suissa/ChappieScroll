@@ -67,7 +67,7 @@ Supported attributes: `data-motion`, `data-delay`, `data-stagger`, `data-duratio
 
 ## Preset collection and demo
 
-The library provides 50 presets spanning fades, directional slides, scale, pop, zoom, rotation, flips, tilt, blur, elastic, bounce, spring, skew, clip-path reveals, drift, float, pulse, shake, shimmer and directional exits. The root page is an interactive catalog that displays every preset, supports replay and category filtering, and includes a timeline composition example.
+The library provides 53 presets spanning fades, directional slides, scale, pop, zoom, rotation, flips, tilt, blur, elastic, bounce, spring, skew, clip-path reveals, drift, float, pulse, shake, shimmer and directional exits. The root page is an interactive catalog that displays every preset, supports replay and category filtering, and includes a timeline composition example.
 
 ```sh
 npm install
