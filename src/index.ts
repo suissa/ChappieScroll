@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { motionPresets } from "./presets";
+import { motionPresets, motionPresetNames } from "./presets";
 import type { ChappieScrollOptions, MotionController, MotionDeclaration, TimelineDeclaration } from "./types";
 
 gsap.registerPlugin(ScrollTrigger);
