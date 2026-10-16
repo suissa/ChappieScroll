@@ -65,7 +65,7 @@ export function createMotion(declarations: MotionDeclaration[], options: { respe
       repeat: declaration.repeat ?? 0,
       yoyo: declaration.yoyo ?? false,
       stagger: declaration.stagger,
-      paused: declaration.paused ?? declaration.trigger === "manual" || declaration.trigger === "hover" || declaration.trigger === "click",
+      paused: declaration.paused ?? (declaration.trigger === "manual" || declaration.trigger === "hover" || declaration.trigger === "click"),
       onComplete: declaration.onComplete,
       scrollTrigger: declaration.trigger === "scroll" ? scrollConfig(declaration.scroll ?? {}, typeof declaration.target === "string" ? declaration.target : declaration.target as Element) : scrollConfig(declaration.scroll),
     } as gsap.TweenVars;
@@ -119,7 +119,7 @@ export function createTimelines(declarations: TimelineDeclaration[], options: { 
  */
 export function initChappieScroll(options: ChappieScrollOptions = {}): { refresh: () => void; destroy: () => void } {
   const selector = options.selector ?? "[data-chappie-scroll]";
-  const scope: ParentNode = options.root ?? document;
+  const scope = options.root ?? document.documentElement;
   const elements = gsap.utils.toArray<HTMLElement>(selector, scope);
   const created: gsap.core.Animation[] = [];
   const reduced = (options.respectReducedMotion ?? true) && reduceMotion();
