@@ -25,7 +25,7 @@ function render(filter = "all") {
   grid.innerHTML = "";
   motionPresetNames.filter((name) => filter === "all" || category(name) === filter).forEach((name, index) => {
     const card = document.createElement("article");
-    card.className = "preset";
+    card.className = "preset";\n    card.dataset.chappieScroll = "";\n    card.dataset.motion = "fadeUp";\n    card.dataset.delay = String((index % 4) * 0.04);
     card.innerHTML = '<button class="preview" aria-label="Replay ' + name + '"><span class="shape shape-' + (index % 6) + '"></span><span class="arrow">↗</span></button><div class="preset-label"><small>' + String(index + 1).padStart(2, "0") + '</small><strong>' + name + '</strong><button class="replay" aria-label="Replay animation">↻</button></div><div class="tag">' + category(name) + ' / gsap</div>';
     const replay = () => {
       const shape = card.querySelector<HTMLElement>(".shape")!;
